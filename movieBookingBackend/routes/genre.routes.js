@@ -1,2 +1,9 @@
-const db = require("../models");
-const mongoose = db.mongoose;
+module.exports = app => {
+    const genres = require("../controllers/genre.controller");
+
+    var router = require("express").Router();
+
+    router.get('/genres', genres.findAllGenres);
+
+    app.use('/api', router);
+};
