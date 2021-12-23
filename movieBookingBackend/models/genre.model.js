@@ -1,15 +1,14 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+module.exports = mongoose => {
+    const Genre = mongoose.model(
+        "genres",
+        mongoose.Schema(
+          {
+            genreid:Number,
+            genre:String
+          }
 
-const genreSchema = Schema(
-    {
-        "genreid": Number,
-        "genre" : String,
-    },
-    {
-        timestamps: true
-    }
-);
+        )
+      );
 
-const Genres = mongoose.model("Genre", genreSchema);
-module.exports = Genres;
+      return Genre;
+    };
