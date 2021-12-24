@@ -9,6 +9,9 @@ module.exports = app => {
 
     router.post("/logout", users.logout);
 
+    router.post("/getCouponCode", users.getCouponCode);
+    
+    router.post("/bookShow", users.bookShow);
+    
     app.use('/api', router);
   };
-  

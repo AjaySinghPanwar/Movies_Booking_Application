@@ -133,4 +133,31 @@ const logout = (req, res) => {
         });
 };
 
-module.exports = {signUp, login, logout};
+
+const getCouponCode = (req, res) => {
+    console.log("Started fetching coupones")
+    const token = req.headers["x-access-token"] || req.headers["authorization"];
+    console.log(token)
+    User.find({ accesstoken: token }).then(function (user) {
+        if (user[0].coupens)
+            res.send(user[0].coupens);
+        else
+            res.send([])
+    });
+
+};
+
+
+const bookShow = (req, res) => {
+    const token = req.headers["x-access-token"] || req.headers["authorization"];
+    console.log(token)
+    User.find({ accesstoken: token }).then(function (user) {
+        if (user[0].bookingRequests)
+            res.send(user[0].bookingRequests);
+        else
+            res.send([])
+    });
+
+};
+
+module.exports = { signUp, login, logout, getCouponCode, bookShow };
