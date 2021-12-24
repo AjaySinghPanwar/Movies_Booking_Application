@@ -9,9 +9,12 @@
   "author": "Ajay Singh Panwar",
   "license": "ISC",
   "dependencies": {
+    "b2a": "^1.1.2",
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^6.1.2"
+    "mongoose": "^6.1.2",
+    "uuid-token-generator": "^1.0.0",
+    "uuidv4": "^6.2.12"
   }
 }
