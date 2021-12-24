@@ -44,8 +44,8 @@ const app = http.createServer((req, res) =>{
 app.listen(9000);
 */
 
-// Running on port 9000
-const PORT = 9000;
+// Running on port 8085
+const PORT = 8085;
 
 var corsOptions = {
   origin: "http://localhost:" + PORT
@@ -70,4 +70,4 @@ require("./routes/user.routes")(app);
 
 app.listen(PORT);
 
-console.log("Server is listening on 9000");
+console.log("Server is listening on 8085");
